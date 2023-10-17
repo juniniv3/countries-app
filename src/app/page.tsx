@@ -20,7 +20,6 @@ export default async function Home() {
   const { data } = await getClient().query({ query });
   console.log(data)
   return (<>
-      <h1>Hello World {data.countries[0].name}</h1>
       <Search countries={data.countries}></Search>
       <SvgWorldComponent/>
     </>)
