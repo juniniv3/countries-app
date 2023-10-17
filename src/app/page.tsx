@@ -21,6 +21,6 @@ export default async function Home() {
   console.log(data)
   return (<>
       <Search countries={data.countries}></Search>
-      <SvgWorldComponent/>
+      <SvgWorldComponent />
     </>)
 }
