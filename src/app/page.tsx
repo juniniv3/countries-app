@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client";
 import { getClient } from '../../lib/graphql-client';
-import SvgWorldComponent from '@/components/Worldmap/Worldmap'
+import SvgWorldComponent from '@/components/Worldmap/Worldmap';
+import Search from '@/components/Search/Search';
+
 const query = gql`query Now {
   countries {
     code
@@ -19,7 +21,7 @@ export default async function Home() {
   console.log(data)
   return (<>
       <h1>Hello World {data.countries[0].name}</h1>
-      <h2>mapa</h2>
+      <Search countries={data.countries}></Search>
       <SvgWorldComponent/>
     </>)
 }
